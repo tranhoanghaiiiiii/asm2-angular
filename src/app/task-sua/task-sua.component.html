@@ -1,0 +1,33 @@
+<form action="" #frm1="ngForm" (ngSubmit)="xuly()" class="col-10 m-auto border border-success px-3 mt-2" style="background-color: azure;">
+    <div class="mb-3">
+        Tên Task
+        <input type="text" name="ten_task" [(ngModel)]="data.ten_task" class="form-control">
+    </div>
+    <div class="mb-3">
+        Dự án
+        <select name="du_an" [(ngModel)]="data.du_an_id" id="">
+            <option *ngFor="let da of listDuAn" value="{{da.id}}">{{da.ten_du_an}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        Nhân Viên
+        <select name="nhan_vien" [(ngModel)]="data.nhan_vien_id" id="">
+            <option *ngFor="let nv of listNhanVien" value="{{nv.id}}">{{nv.ten}}</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        status
+        <input type="number" name="status" [(ngModel)]="data.status" class="form-control">
+    </div>
+    <div class="mb-3">
+        priority
+        <input type="number" name="priority" [(ngModel)]="data.priority" class="form-control">
+    </div>
+    <div class="mb-3">
+        mô tả
+        <textarea name="mo_ta" rows="4" [(ngModel)]="data.mo_ta" id="" class="form-control"></textarea>
+
+    </div>
+
+    <div class="mb-3"><button class="btn btn-success">sửa task</button></div>
+</form>

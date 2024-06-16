@@ -1,0 +1,65 @@
+<div style="padding: 20px 10px 0px 10px; " class="d-flex">
+    <div class="col-md-8  " style="padding: 20px 10px 0px 10px;margin-right: 10px; background-color: white; border-radius: 10px; ">
+        <div class="d-flex justify-content-center align-items-center">
+            <div align="top" class="bg-warning p-1 fw-bold text-center border-1" style="border-radius: 10px; width: 90%; margin-bottom: 10px;">
+                <h4>Danh sách dự án</h4>
+            </div>
+
+        </div>
+        <table class="table table-bordered border border-gray">
+
+            <tr>
+                <th>Tên dự án</th>
+
+                <th>Ngày start</th>
+                <th class="text-end p-1">Chi Phí</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let da of list_du_an">
+
+                <td>{{da.ten_du_an}}</td>
+                <td>{{da.ngay_start|date:'dd/mm/yyyy'}}</td>
+                <td class="text-end p-1">{{ da.tien | number }} VNĐ</td>
+
+
+            </tr>
+        </table>
+
+        <hr color="red" align="right" size="5px">
+        <div class="d-flex justify-content-center align-items-center">
+            <div align="top" class="bg-warning p-1 fw-bold text-center border-1" style="border-radius: 10px; width: 90%; margin-bottom: 10px;">
+                <h4>Danh sách Task</h4>
+            </div>
+
+        </div>
+        <table class="table table-bordered border border-primary">
+
+            <tr>
+                <th>Tên dự án</th>
+
+                <th>Mô tả</th>
+                <th class="text-end p-1">Dự án</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let tk of list_task">
+
+                <td>{{tk.ten_task}}</td>
+                <td>{{tk.mo_ta}}</td>
+                <td class="text-end p-1">{{tk.du_an_id}}</td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-4  ">
+        <div align="top" class="bg-warning p-1 fw-bold text-center border-1" style="border-radius: 10px; width: 97%; margin-bottom: 10px;">
+            <h4>Danh sách Nhân Viên</h4>
+        </div>
+        <div class="" style="margin-right: 10px;" id="cotphai">
+            <ul class="list-group " style="margin-bottom: 10px;" *ngFor="let nv of list_nv">
+                <li class="list-group-item active" aria-current="true">{{nv.ho}} {{nv.ten}}</li>
+                <li class="list-group-item">Chức Vụ:{{nv.vi_tri}} </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div style="background-color: antiquewhite; margin-right: 10px; border-radius: 5px;">
+    <div *ngFor="let task of list_task" class="mt-1">
+        <div class="ms-1"><b>{{task.ten_task}}</b><br>{{task.mo_ta}}</div>
+        <div class="mb-1 px-5  border-bottom border-primary d-flex flex-row mb-3">
+            <div class="col-5">Priority:{{task.priority}} <br>Status:{{task.status}}</div>
+            <div class="col-5">Nhân Viên {{task.nhan_vien_id}} <br>Dự án:{{task.du_an_id}}</div>
+            <button type="button" class="m-2 btn btn-primary" (click)="deleteTask(task.id)">Xóa</button>
+            <button type="button" class="m-2 btn btn-primary" routerLink="/task/sua/{{task.id}}">sửa</button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<form #frm1="ngForm" class="col-10 m-auto p-2 border border-primary" (ngSubmit)="xulyDN(frm1.value)" style="background-color: rgb(101, 201, 241); border-radius: 5px;">
+    <h4>THÀNH VIÊN ĐĂNG NHẬP</h4>
+    <p>Username
+        <input name="un" ngModel class="form-control border-primary" type="text">
+    </p>
+    <p> Password
+        <input name="pw" ngModel class="form-control border-primary" type="password">
+    </p>
+    <p>
+        <button type="submit" class="btn btn-success">Đăng nhập </button>
+    </p>
+</form>

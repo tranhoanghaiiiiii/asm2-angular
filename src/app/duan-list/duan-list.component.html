@@ -1,0 +1,20 @@
+<table class="table table-bordered border border-primary" style="background-color: antiquewhite;">
+    <caption align="top" class="bg-warning p-1 fw-bold">Danh sách dự án</caption>
+    <tr>
+        <th>ID</th>
+        <th>Ten dự án</th>
+        <th>Ngày start</th>
+        <th class="text-end p-1">Tiền</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let da of list_du_an">
+        <td class="p-1">{{da.id}}</td>
+        <td>{{da.ten_du_an}}</td>
+        <td>{{da.ngay_start|date:'dd/mm/yyyy'}}</td>
+        <td class="text-end p-1">{{da.tien | number}} VNĐ</td>
+        <td class="text-end p-1">
+            <button type="button" class="btn btn-primary" (click)="deleteProduct(da.id)">Xóa</button>
+            <button type="button" class="btn btn-primary" routerLink="/du_an/sua/{{da.id}}">sửa</button>
+        </td>
+    </tr>
+</table>
